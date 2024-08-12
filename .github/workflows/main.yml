@@ -11,6 +11,6 @@ jobs:
         uses: SamKirkland/web-deploy@v1
         with:
           target-server: ssh.strato.de
-          remote-user: hendriksh@hendrik-sh.de
+          remote-user: hendriksh
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           destination-path: ~/hendrik/
