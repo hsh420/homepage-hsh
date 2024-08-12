@@ -11,8 +11,8 @@ jobs:
       - name: Upload FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ssh.strato.de
+          target-server: ssh.strato.de
           username: hendriksh@hendrik-sh.de
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          destination-path: ~/hendrik/
           port: 22
