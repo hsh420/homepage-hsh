@@ -1,6 +1,8 @@
 name: Deployment
 run-name: ${{ github.actor }} is deploying to Strato 🚀
-on: [push]
+on:
+  push:
+    branches: main
 jobs:
   deployment:
     runs-on: ubuntu-latest
