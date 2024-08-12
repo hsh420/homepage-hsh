@@ -14,4 +14,3 @@ jobs:
           remote-user: hendriksh@hendrik-sh.de
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           destination-path: ~/hendrik/
-          port: 22
