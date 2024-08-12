@@ -12,6 +12,6 @@ jobs:
         with:
           server: ftp.strato.de
           username: hendriksh@hendrik-sh.de
-          password: ${{ secrets.PASSWORD }}
+          password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           server-dir: ~/hendrik/
