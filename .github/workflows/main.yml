@@ -4,14 +4,13 @@ on: [push]
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Upload FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Upload
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ssh.strato.de
+          target-server: ssh.strato.de
           username: hendriksh@hendrik-sh.de
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           destination-path: ~/hendrik/
