@@ -18,3 +18,4 @@ jobs:
           remote_port: 22
           remote_user: hendriksh@hendrik-sh.de
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_key_pass: ${{ secrets.REMOTE_PASSPHRASE }}
