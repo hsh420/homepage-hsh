@@ -12,6 +12,7 @@ jobs:
         uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: -avzr --delete
+          legacy_allow_rsa_hostkeys: "true"
           path: ../hsh_homepage
           remote_path: /hendrik/
           remote_host: ssh.strato.de
