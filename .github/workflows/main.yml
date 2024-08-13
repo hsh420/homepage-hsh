@@ -4,16 +4,17 @@ on:
   push:
     branches: main
 jobs:
-  deployment:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: Upload
-        uses: SamKirkland/web-deploy@v1
+      - uses: actions/checkout@v3
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          target-server: ssh.strato.de
-          remote-user: hendriksh@hendrik-sh.de
-          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          destination-path: ~/hendrik/
-          source-path: ../hsh_homepage
+          switches: -avzr --delete
+          path: ../hsh_homepage
+          remote_path: /hendrik/
+          remote_host: ssh.strato.de
+          remote_port: 22
+          remote_user: hendriksh@hendrik-sh.de
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
