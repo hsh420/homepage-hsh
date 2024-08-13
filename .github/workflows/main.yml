@@ -10,8 +10,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Upload
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ftp.strato.de
-          username: hendriksh@hendrik-sh.de
-          password: ${{ secrets.FTP_PASSWORD }}
+          target-server: ssh.strato.de
+          remote-user: hendriksh@hendrik-sh.de
+          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          destination-path: ~/hendrik/
+          source-path: ../hsh_homepage
